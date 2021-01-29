@@ -149,13 +149,13 @@ body{
        line-height: 17px;
    }
    
-   .messageItem--interlocuteur{
+   .messageItem--left{
        background-color: #ede5f4;
        color: hsl(276, 55%, 52%);
        border-bottom-left-radius: 5px;
    }
    
-   .messageItem--locuteur{
+   .messageItem--right{
        background-color: white;
        color: hsl(271, 15%, 43%);
        align-self: flex-end;
@@ -186,7 +186,7 @@ body{
    
    .messagePicture{
        margin: 5px 5px 0 5px;
-       border-radius: 15px;
+       border-radius: 10px;
    }
    
    .messageItem--work{
@@ -225,8 +225,16 @@ body{
        margin: 15px;
        padding: 20px;
        border-radius: 50px;
-       color: silver;
        background-color: white;
+   }
+
+   input{
+    border: none;
+    outline: none;
+   }
+
+   input, input::placeholder{
+    color: hsl(206, 6%, 79%);
    }
    
    .iconeContainer{
@@ -240,6 +248,7 @@ body{
        background-color: hsl(271, 36%, 24%);
        border-radius: 50px;
        color: white;
+       cursor: pointer;
    }
     
 /*#endregion*/
@@ -258,8 +267,8 @@ textArea{
 }
 
 .textAreaTitle{
-    font-size: 3em;
-    font-weight: 500;
+    font-size: 4em;
+    font-weight: 600;
     letter-spacing: 1px;
     color: hsl(271, 36%, 24%);
     margin: 0;
@@ -270,7 +279,7 @@ textArea{
     padding: 15px;
     font-size: 16px;
     letter-spacing: .5px;
-    line-height: 23px;
+    line-height: 25px;
 }
 
 /*#endregion*/
@@ -286,7 +295,7 @@ textArea{
     width: 50%;
     top: -0;
     left: -0%;
-    background: linear-gradient(hsl(289, 100%, 72%),hsl(276, 55%, 52%));
+    background: linear-gradient(200deg,hsl(293, 100%, 63%) 0%, hsl(264, 100%, 61%));
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     border-bottom-right-radius: 300px; 
@@ -299,7 +308,8 @@ textArea{
     width: 50%;
     bottom: 0;
     right: -0;
-    background-color: hsl(270, 20%, 96%);
+    background-color: hsl(293, 100%, 63%);
+    opacity: .05;
     border-top-left-radius: 400px;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
@@ -307,16 +317,19 @@ textArea{
     
 }
 /**RESPONSIVE**/
+@media all and (min-width: 426px) and (max-width: 1023px){ 
+    .background1{
+        position: absolute;
+        height: 600px;
+        width: 60%;
+        left: -100px;
+    }  
+}  
 @media all and (min-width: 1024px){    
-    .background1, .background2{
-        
-        z-index: -1;
-    }
-
     .background1{
         position: absolute;
         height: 85%;
-        width: 650px;
+        width: 34%;
         border-top-left-radius: 0;
         border-top-right-radius: 0;
         border-bottom-right-radius: 400px; 
@@ -327,7 +340,7 @@ textArea{
     
     .background2{
         position: fixed;
-        height: 80%;
+        height: 800px;
         width: 40%;
         border-top-left-radius:  50%;
         border-top-right-radius: 50%;
@@ -341,7 +354,6 @@ textArea{
         display: flex;
         flex-wrap: wrap;
         max-width: 1440px;
-        padding: 0;
         margin: auto;
     }
     /*#endregion*/
